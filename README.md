@@ -1,10 +1,10 @@
-# Cable Physics System for Unity
+# Cable Physics (for Unity)
 
 [![Unity 2020.3+](https://img.shields.io/badge/unity-2020.3%2B-blue.svg)](https://unity3d.com/get-unity/download)
 [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/license/mit)
 
 ## Description
-The Cable Physics System is a Unity asset that simulates cable behavior with wrapping around walls, inspired by the mechanics seen in games such as Filament and Poppy's Playtime. This system provides dynamic and visually appealing cable simulation, which can be used for a variety of applications in games development.
+The Cable Physics is a Unity asset that simulates cable behavior with wrapping around walls, inspired by the mechanics seen in games such as Filament and Poppy's Playtime. This system provides dynamic and visually appealing cable simulation, which can be used for a variety of applications in games development.
 
 ## Components
 Overview of key components of the system
@@ -18,13 +18,13 @@ Simulates single cable.
 - **Length:** Output value of cable length.
 
 ### Cable Line Renderer
-Add it to Line Renderer to sychronize its shape with the cable
+Add it to Line Renderer to sychronize its shape with the cable.
 - **Cable:** Cable component from which shape should be taken.
 
 ### Cable Length Constraint
 Constraints cable length and adds physical forces to cable ends if the maximum length is reached.
-- **Origin Rigidbody:** Rigidbody on which cable origin will exert force
-- **Ending Rigidbody:** Rigidbody on which cable ending will exert force
+- **Origin Rigidbody:** Rigidbody on which cable origin will exert force.
+- **Ending Rigidbody:** Rigidbody on which cable ending will exert force.
 - **Max Length:** Max length of the cable. Upon reaching it cable will exert forces on connected rigidbodies. 
 - **Base Force:** Starting force that is exerted on rigidbodies opon reaching the maximum length.
 - **Force Modifier:** Spring force of the cable. The more cable's length exceeds maximum length, the more force will be applied.

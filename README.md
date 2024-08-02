@@ -4,31 +4,31 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/license/mit)
 
 ## Description
-
 The Cable Physics System is a Unity asset that simulates cable behavior with wrapping around walls, inspired by the mechanics seen in games such as Filament and Poppy's Playtime. This system provides dynamic and visually appealing cable simulation, which can be used for a variety of applications in games development.
 
-## Table of Contents
-- [Usage](#usage)
-- [Components](#components)
-
-## Usage
-
-To start using the Cable Physics System, add the asset folder into your Unity project. Add the Cable component to any GameObject to simulate cable behavior.
-
 ## Components
-Descriptions of included components
-
+Overview of key components of the system
 
 ### Cable
 Simulates single cable. 
-- Origin: The starting anchor point of the cable.
-- Ending: The ending anchor point of the cable.
-- Thickness: Adjust the thickness of the cable, used for walls detection.
-- Detected Layers: Layers which cable collides with.
-- Length: Output value of cable length.
+- **Origin:** The starting anchor point of the cable.
+- **Ending:** The ending anchor point of the cable.
+- **Thickness:** Adjust the thickness of the cable, used for walls detection.
+- **Detected Layers:** Layers which cable collides with.
+- **Length:** Output value of cable length.
 
 ### Cable Line Renderer
+Add it to Line Renderer to sychronize its shape with the cable
+- **Cable:** Cable component from which shape should be taken.
 
+### Cable Length Constraint
+Constraints cable length and adds physical forces to cable ends if the maximum length is reached.
+- **Origin Rigidbody:** Rigidbody on which cable origin will exert force
+- **Ending Rigidbody:** Rigidbody on which cable ending will exert force
+- **Max Length:** Max length of the cable. Upon reaching it cable will exert forces on connected rigidbodies. 
+- **Base Force:** Starting force that is exerted on rigidbodies opon reaching the maximum length.
+- **Force Modifier:** Spring force of the cable. The more cable's length exceeds maximum length, the more force will be applied.
+- **Damping:** Damping force, proportional to velocity of rigidbody along the cable.
 
 ## Used Packages
 ### NaughtyAttributes (optional)

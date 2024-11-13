@@ -2,7 +2,7 @@
 
 namespace Bipolar.CablePhysics
 {
-    public class CableVisualThicknessToLenghtRelation : MonoBehaviour
+    public class CableVisualThicknessToLengthRelation : MonoBehaviour
     {
         [SerializeField]
         private Cable cable;

@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Bipolar.CablePhysics
 {
@@ -18,10 +17,10 @@ namespace Bipolar.CablePhysics
 
         private void Update()
         {
-            var points = cable.Points;
-            lineRenderer.positionCount = points.Count;
-            for (int i = 0; i < points.Count; i++)
-                lineRenderer.SetPosition(i, points[i]);
+            int count = cable.PointsCount;
+            lineRenderer.positionCount = count;
+            for (int i = 0; i < count; i++)
+                lineRenderer.SetPosition(i, cable.GetPosition(i));
         }
     }
 }

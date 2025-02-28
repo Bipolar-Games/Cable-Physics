@@ -63,6 +63,4 @@ namespace Bipolar.CablePhysics
             PullToCable(EndingRigidbody, forceValue, isEnding: true);
         }
     }
-
-
 }

@@ -244,16 +244,20 @@ namespace Bipolar.CablePhysics
         private void OnDrawGizmos()
         {
             if (points == null || points.Count <= 0)
-                return;
-
-            Gizmos.color = Color.yellow;
-            if (points.Count > 1)
             {
-                for (int i = 1; i < points.Count; i++)
+                Gizmos.DrawLine(origin.position, ending.position);
+            }
+            else
+            {
+                Gizmos.color = Color.yellow;
+                if (points.Count > 1)
                 {
-                    var start = points[i - 1];
-                    var end = points[i];
-                    DrawGizmosLine(start, end);
+                    for (int i = 1; i < points.Count; i++)
+                    {
+                        var start = points[i - 1];
+                        var end = points[i];
+                        DrawGizmosLine(start, end);
+                    }
                 }
             }
         }

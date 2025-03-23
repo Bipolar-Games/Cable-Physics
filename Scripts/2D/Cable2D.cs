@@ -26,7 +26,7 @@ namespace Bipolar.CablePhysics
 
         protected override bool Linecast(Vector2 start, Vector2 end, out RaycastHit2D raycastHit, LayerMask layerMask)
         {
-            raycastHit = Physics2D.Linecast(start, end, layerMask);
+            raycastHit = Physics2D.Linecast(end, start, layerMask);
             return raycastHit.collider != null;
         }
 

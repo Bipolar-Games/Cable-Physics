@@ -17,6 +17,9 @@ namespace Bipolar.CablePhysics
 
         private void Update()
         {
+            if (cable == null)
+				return;
+
             int count = cable.PointsCount;
             lineRenderer.positionCount = count;
             for (int i = 0; i < count; i++)

@@ -131,7 +131,7 @@ namespace Bipolar.CablePhysics
             isLengthCalculated = true;
         }
 
-        private void FixedUpdate()
+        private void Update()
         {
             DetectCollisionEnter(points.Count - 1, -1, ending);
             DetectCollisionEnter(0, +1, origin);
@@ -184,14 +184,15 @@ namespace Bipolar.CablePhysics
                         hitNormal = reversedPositionDelta;
                     Normalize(ref hitNormal);
 
+                    float halfThickness = thickness * 0.5f;
                     bool wasSafeHit = false;
                     for (int i = 1; i < 10; i++)
                     {
-                        var safePointDetectionLineStart = Add(hitCenter, Multiply(hitNormal, i * thickness));
+                        var safePointDetectionLineStart = Add(hitCenter, Multiply(hitNormal, i * halfThickness));
                         if (Linecast(hitCenter, safePointDetectionLineStart, out var safePointDetectionHit, detectedLayers) == false)
                             continue;
 
-                        var safePoint = Add(GetPoint(safePointDetectionHit), Multiply(GetNormal(safePointDetectionHit), thickness));
+                        var safePoint = Add(GetPoint(safePointDetectionHit), Multiply(GetNormal(safePointDetectionHit), halfThickness));
                         points.Insert(Mathf.Max(neighbourPointIndex, tipIndex), safePoint);
                         wasSafeHit = true;
                         break;
